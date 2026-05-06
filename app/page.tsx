@@ -1,6 +1,6 @@
 import { RevealOnScroll } from "./ui/reveal-on-scroll";
 
-const WHATSAPP_NUMBER = "549XXXXXXXXXX";
+const WHATSAPP_NUMBER = "5493517530992";
 
 function buildWhatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -90,7 +90,7 @@ function AboutSection() {
         <div className="rounded-3xl bg-white p-8 ring-1 ring-zinc-200 sm:p-10">
           <h2 className="text-2xl font-semibold text-zinc-900 sm:text-3xl">Sobre mi</h2>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-zinc-600">
-            Trabajo en Recursos Humanos hace anos viendo el mismo problema: empresas que no encuentran
+            Trabajo en Recursos Humanos hace años viendo el mismo problema: empresas que no encuentran
             buenos perfiles y personas que no consiguen entrevistas.
           </p>
           <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-zinc-600">
