@@ -6,7 +6,7 @@ const TARGET_IDS: readonly string[] = ["mentoria", "cv", "empresas"];
 
 export function ScrollHashHighlight() {
   useEffect(() => {
-    let timeoutId: ReturnType<typeof setTimeout>;
+    let timeoutId: number | undefined;
 
     function flashTarget() {
       const raw = window.location.hash.slice(1);
