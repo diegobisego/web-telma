@@ -59,11 +59,11 @@ export function ServiceWhatsappCard({
       aria-busy={opening}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      className={`relative cursor-pointer overflow-hidden outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${opening ? "pointer-events-none scale-[0.99] opacity-90" : ""} ${className}`}
+      className={`relative cursor-pointer overflow-hidden outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${opening ? "pointer-events-none scale-[0.99] opacity-90" : ""} ${className}`}
       aria-label={ariaLabel}
     >
       {opening ? (
-        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white/55 text-sm font-semibold text-emerald-900 backdrop-blur-[2px]">
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white/55 text-sm font-semibold text-brand-dark backdrop-blur-[2px]">
           Abriendo WhatsApp...
         </div>
       ) : null}

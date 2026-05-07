@@ -46,7 +46,7 @@ export function TrackedWhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-busy={busy}
-      className={`inline-flex items-center justify-center rounded-2xl bg-emerald-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-emerald-600 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 active:scale-[0.99] ${busy ? "pointer-events-none opacity-85 scale-[0.98]" : ""} ${className}`}
+      className={`inline-flex items-center justify-center rounded-2xl bg-brand px-6 py-3 text-base font-semibold text-white shadow-[0_10px_28px_-6px_rgba(111,143,114,0.38)] transition duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-brand-dark hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.99] ${busy ? "pointer-events-none opacity-85 scale-[0.98]" : ""} ${className}`}
     >
       {busy ? "Abriendo WhatsApp..." : label}
     </a>
