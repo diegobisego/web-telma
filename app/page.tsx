@@ -205,13 +205,13 @@ function ServicesSection() {
         <p className="mt-3 max-w-2xl text-base font-medium text-emerald-800">{POSITIONING_LINE}</p>
       </div>
       <RevealOnScroll>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="flex flex-col gap-6">
           <ServiceWhatsappCard
             id="empresas"
             href={buildWhatsappLink(WA_MSG_RECLUTAMIENTO)}
             ariaLabel="Abrir WhatsApp para consultar por reclutamiento"
             trackEventName="empresas_click"
-            className="scroll-mt-28 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-zinc-200 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-emerald-200"
+            className="scroll-mt-28 w-full rounded-3xl bg-white p-8 shadow-sm ring-1 ring-zinc-200 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-emerald-200"
           >
             <h3 className="text-2xl font-bold tracking-tight text-zinc-900">
               Deja de perder tiempo con candidatos que no sirven
@@ -263,7 +263,10 @@ function ServicesSection() {
             <WhatsAppCtaVisual label="Quiero contratar mejor" className="mt-8 w-full" />
           </ServiceWhatsappCard>
 
-          <div id="personas" className="scroll-mt-28 flex flex-col gap-6">
+          <div
+            id="personas"
+            className="scroll-mt-28 grid gap-6 md:grid-cols-2 md:items-start"
+          >
             <ServiceWhatsappCard
               id="cv"
               href={buildWhatsappLink(WA_MSG_CV)}
