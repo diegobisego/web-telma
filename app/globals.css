@@ -61,6 +61,30 @@ html {
   animation: pulse-soft 2.4s infinite;
 }
 
+@keyframes scroll-target-flash {
+  0% {
+    box-shadow:
+      0 0 0 3px rgba(16, 185, 129, 0.45),
+      0 8px 28px rgba(16, 185, 129, 0.12);
+  }
+
+  45% {
+    box-shadow:
+      0 0 0 3px rgba(16, 185, 129, 0.3),
+      0 8px 28px rgba(16, 185, 129, 0.08);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 transparent,
+      0 0 0 0 transparent;
+  }
+}
+
+.scroll-target-flash {
+  animation: scroll-target-flash 2s ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -74,5 +98,11 @@ html {
 
   .pulse-soft {
     animation: none;
+  }
+
+  .scroll-target-flash {
+    animation: none;
+    outline: 2px solid rgba(16, 185, 129, 0.6);
+    outline-offset: 2px;
   }
 }
