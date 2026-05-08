@@ -15,9 +15,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Consultora RRHH | Seleccion y CV para pymes y candidatos",
+  title: "Telma Córdoba | Consultora RRHH · Selección y CV",
   description:
-    "Reclutamiento y seleccion para pymes, optimizacion de CV para busqueda laboral y contacto directo por WhatsApp.",
+    "Telma Córdoba: reclutamiento y selección para pymes, optimización de CV y mentoría laboral. RRHH humano y estratégico. Contacto por WhatsApp.",
 };
 
 export default function RootLayout({

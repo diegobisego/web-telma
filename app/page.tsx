@@ -6,6 +6,9 @@ import { ScrollHashHighlight } from "./ui/scroll-hash-highlight";
 import { ServiceWhatsappCard } from "./ui/service-whatsapp-card";
 import { TrackedWhatsAppButton } from "./ui/tracked-whatsapp-button";
 
+const BRAND_NAME = "Telma Córdoba";
+const BRAND_TAGLINE = "Consultora RRHH";
+
 const WA_MSG_GLOBAL = "Hola Telma 😊 Vi tu página web y quisiera recibir información sobre tus servicios.";
 const WA_MSG_RECLUTAMIENTO = WA_MSG_GLOBAL;
 const WA_MSG_CV = WA_MSG_GLOBAL;
@@ -82,6 +85,8 @@ function HeroSection() {
         <div className="rounded-3xl bg-linear-to-br from-brand-soft/85 via-white to-cream p-8 shadow-[0_16px_40px_-28px_rgba(51,51,51,0.28)] ring-1 ring-stone-200 sm:p-12">
           <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
             <div>
+              <p className="mb-1 font-display text-xl font-semibold text-brand-dark sm:text-2xl">{BRAND_NAME}</p>
+              <p className="mb-4 text-sm text-stone-600">{BRAND_TAGLINE}</p>
               <div className="mb-4 flex flex-wrap items-center gap-2">
                 <p className="inline-flex rounded-full bg-white px-4 py-1 text-sm font-semibold text-brand-dark ring-1 ring-brand-border/70">
                   RRHH humano y estratégico
@@ -125,7 +130,7 @@ function HeroSection() {
               <div className="overflow-hidden rounded-3xl bg-brand-soft/70 ring-1 ring-brand-border/65">
                 <img
                   src="/telma-hero-placeholder.svg"
-                  alt="Retrato profesional de Telma en un entorno de trabajo cálido y moderno."
+                  alt={`Retrato profesional de ${BRAND_NAME} en un entorno de trabajo cálido y moderno.`}
                   className="h-full w-full object-cover"
                   loading="eager"
                 />
@@ -190,7 +195,8 @@ function AboutSection() {
     <section id="sobre-mi" className="mx-auto w-full max-w-4xl px-6 py-20 text-center sm:px-10 lg:px-14">
       <RevealOnScroll>
         <div className="rounded-3xl bg-white p-8 ring-1 ring-stone-200 shadow-[0_12px_30px_-24px_rgba(51,51,51,0.35)] sm:p-11">
-          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Sobre mi</h2>
+          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Sobre mí</h2>
+          <p className="mx-auto mt-2 text-base font-medium text-brand-dark">{BRAND_NAME}</p>
           <p className="mx-auto mt-4 inline-flex rounded-full bg-brand-soft px-4 py-1 text-sm font-semibold text-brand-dark ring-1 ring-brand-border/70">
             +10 años de experiencia
           </p>
@@ -217,6 +223,9 @@ function ServicesSection() {
     <section id="servicios" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-14">
       <div className="mb-8">
         <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Servicios</h2>
+        <p className="mt-2 text-sm text-stone-600">
+          Cómo trabaja {BRAND_NAME}
+        </p>
         <p className="mt-3 max-w-2xl text-base font-medium text-brand-dark">{POSITIONING_LINE}</p>
       </div>
       <RevealOnScroll>
@@ -621,18 +630,24 @@ function FinalCtaSection() {
 function FooterSection() {
   return (
     <footer className="border-t border-stone-200 bg-white">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-stone-600 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
-        <a
-          href={buildWhatsappLink(WA_MSG_GLOBAL)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition hover:text-brand-dark"
-        >
-          WhatsApp
-        </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="transition hover:text-ink">
-          LinkedIn
-        </a>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-6 py-8 text-sm text-stone-600 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
+        <div className="flex flex-col gap-0.5">
+          <span className="font-semibold text-ink">{BRAND_NAME}</span>
+          <span className="text-xs text-stone-500">{BRAND_TAGLINE}</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          <a
+            href={buildWhatsappLink(WA_MSG_GLOBAL)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:text-brand-dark"
+          >
+            WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="transition hover:text-ink">
+            LinkedIn
+          </a>
+        </div>
       </div>
     </footer>
   );
@@ -644,8 +659,9 @@ export default function Home() {
       <ScrollHashHighlight />
       <header className="sticky top-0 z-40 border-b border-stone-200/80 bg-cream/95 backdrop-blur">
         <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-10 lg:px-14">
-          <a href="#inicio" className="text-sm font-semibold text-ink">
-            RRHH Consultora
+          <a href="#inicio" className="flex flex-col gap-0.5 text-left leading-tight">
+            <span className="text-sm font-semibold text-ink">{BRAND_NAME}</span>
+            <span className="text-[11px] font-medium text-stone-500">{BRAND_TAGLINE}</span>
           </a>
           <div className="flex items-center gap-3 text-sm text-stone-600 sm:gap-4">
             <a href="#servicios" className="hidden transition hover:text-brand-dark sm:inline-flex">
