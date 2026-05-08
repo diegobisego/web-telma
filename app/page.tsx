@@ -6,11 +6,10 @@ import { ScrollHashHighlight } from "./ui/scroll-hash-highlight";
 import { ServiceWhatsappCard } from "./ui/service-whatsapp-card";
 import { TrackedWhatsAppButton } from "./ui/tracked-whatsapp-button";
 
-const WA_MSG_RECLUTAMIENTO =
-  "Hola, necesito ayuda con reclutamiento. ¿Cómo trabajás?";
-const WA_MSG_CV = "Hola, vi la web y quiero mejorar mi CV. ¿Cómo es el proceso?";
-const WA_MSG_MENTORIA =
-  "Hola, vengo de la web y quiero info sobre mentoría laboral. ¿Cómo funciona?";
+const WA_MSG_GLOBAL = "Hola Telma 😊 Vi tu página web y quisiera recibir información sobre tus servicios.";
+const WA_MSG_RECLUTAMIENTO = WA_MSG_GLOBAL;
+const WA_MSG_CV = WA_MSG_GLOBAL;
+const WA_MSG_MENTORIA = WA_MSG_GLOBAL;
 
 function WhatsAppCtaVisual({ label, className = "" }: { label: string; className?: string }) {
   return (
@@ -23,7 +22,8 @@ function WhatsAppCtaVisual({ label, className = "" }: { label: string; className
   );
 }
 
-const POSITIONING_LINE = "Trabajo desde la mirada de quien selecciona";
+const POSITIONING_LINE =
+  "Trabajo desde la mirada de quien selecciona, pero también desde la comprensión de la persona que está del otro lado.";
 
 function ServiceAccordion({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -77,50 +77,64 @@ function AudienceSegmentSection() {
 
 function HeroSection() {
   return (
-    <section id="inicio" className="mx-auto w-full max-w-6xl px-6 pb-16 pt-16 sm:px-10 lg:px-14">
+    <section id="inicio" className="mx-auto w-full max-w-6xl px-6 pb-20 pt-16 sm:px-10 lg:px-14">
       <RevealOnScroll>
-        <div className="rounded-3xl bg-linear-to-br from-brand-soft via-white to-cream p-8 shadow-sm ring-1 ring-stone-200 sm:p-12">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <p className="inline-flex rounded-full bg-white px-4 py-1 text-sm font-semibold text-brand-dark ring-1 ring-brand-border/70">
-              Respuesta en menos de 24hs
-            </p>
-            <p className="inline-flex rounded-full bg-brand-dark/12 px-4 py-1 text-sm font-semibold text-brand-dark ring-1 ring-brand-border/75">
-              {POSITIONING_LINE}
-            </p>
-          </div>
-          <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-ink sm:text-6xl">
-            Contratar bien o conseguir entrevistas no deberia ser cuestion de suerte
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg text-stone-700 sm:text-xl">
-            Te ayudo a resolverlo con un enfoque real de Recursos Humanos, sin vueltas ni teoria
-          </p>
-          <div className="mt-8">
-            <TrackedWhatsAppButton
-              href={buildWhatsappLink("Hola, quiero hacer una consulta")}
-              label="Hacer consulta por WhatsApp"
-              trackEventName="hero_cta_click"
-              className="w-full sm:w-auto"
-            />
-            <p className="mt-2 max-w-xl text-sm font-medium text-stone-700">
-              Te respondo personalmente (no es automático).
-            </p>
-            <a
-              href="#mentoria"
-              className="mt-4 inline-flex w-full items-center justify-center rounded-2xl border-2 border-brand-dark/22 bg-white/70 px-6 py-3 text-base font-semibold text-brand-dark backdrop-blur-sm transition duration-200 hover:border-brand-dark/48 hover:bg-white hover:shadow-md sm:w-auto"
-            >
-              Ver mentoría laboral
-            </a>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-stone-600">
-              Respondo en el dia. Cupos limitados por semana.
-            </p>
-            <div className="mt-3 flex flex-wrap gap-3 text-sm text-stone-700">
-              <span className="rounded-full bg-white px-3 py-1 ring-1 ring-stone-200">Respuesta en el dia</span>
-              <span className="rounded-full bg-white px-3 py-1 ring-1 ring-stone-200">Sin compromiso</span>
+        <div className="rounded-3xl bg-linear-to-br from-brand-soft/85 via-white to-cream p-8 shadow-[0_16px_40px_-28px_rgba(51,51,51,0.28)] ring-1 ring-stone-200 sm:p-12">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+            <div>
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <p className="inline-flex rounded-full bg-white px-4 py-1 text-sm font-semibold text-brand-dark ring-1 ring-brand-border/70">
+                  RRHH humano y estratégico
+                </p>
+                <p className="inline-flex rounded-full bg-brand-dark/12 px-4 py-1 text-sm font-semibold text-brand-dark ring-1 ring-brand-border/75">
+                  Respuesta en menos de 24hs
+                </p>
+              </div>
+              <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
+                RRHH humano, estratégico y sin vueltas
+              </h1>
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-stone-700 sm:text-xl">
+                Te acompaño a conseguir trabajo o encontrar el talento correcto, desde una mirada
+                real de selección y coaching laboral.
+              </p>
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-brand-dark italic sm:text-xl">
+                {POSITIONING_LINE}
+              </p>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <a
+                  href="#personas"
+                  className="inline-flex items-center justify-center rounded-2xl bg-brand px-6 py-3 text-base font-semibold text-white shadow-[0_10px_28px_-6px_rgba(111,143,114,0.38)] transition duration-300 hover:-translate-y-0.5 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                >
+                  Quiero conseguir trabajo
+                </a>
+                <a
+                  href="#empresas"
+                  className="inline-flex items-center justify-center rounded-2xl border border-brand-dark/35 bg-white px-6 py-3 text-base font-semibold text-brand-dark shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                >
+                  Quiero contratar
+                </a>
+              </div>
+              <TrackedWhatsAppButton
+                href={buildWhatsappLink(WA_MSG_GLOBAL)}
+                label="Escribirme por WhatsApp"
+                trackEventName="hero_cta_click"
+                className="mt-4 w-full sm:w-auto"
+              />
             </div>
+            <figure className="mx-auto w-full max-w-md lg:max-w-none">
+              <div className="overflow-hidden rounded-3xl bg-brand-soft/70 ring-1 ring-brand-border/65">
+                <img
+                  src="/telma-hero-placeholder.svg"
+                  alt="Retrato profesional de Telma en un entorno de trabajo cálido y moderno."
+                  className="h-full w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            </figure>
           </div>
         </div>
       </RevealOnScroll>
-      <div className="mt-6 flex flex-wrap justify-center gap-2 sm:justify-start">
+      <div className="mt-7 flex flex-wrap justify-center gap-2 sm:justify-start">
         <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-stone-700 shadow-sm ring-1 ring-stone-200">
           +10 años en RRHH
         </span>
@@ -173,23 +187,24 @@ function DecisionQuickSection() {
 
 function AboutSection() {
   return (
-    <section id="sobre-mi" className="mx-auto w-full max-w-4xl px-6 py-16 text-center sm:px-10 lg:px-14">
+    <section id="sobre-mi" className="mx-auto w-full max-w-4xl px-6 py-20 text-center sm:px-10 lg:px-14">
       <RevealOnScroll>
-        <div className="rounded-3xl bg-white p-8 ring-1 ring-stone-200 sm:p-10">
+        <div className="rounded-3xl bg-white p-8 ring-1 ring-stone-200 shadow-[0_12px_30px_-24px_rgba(51,51,51,0.35)] sm:p-11">
           <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Sobre mi</h2>
           <p className="mx-auto mt-4 inline-flex rounded-full bg-brand-soft px-4 py-1 text-sm font-semibold text-brand-dark ring-1 ring-brand-border/70">
-            Más de 10 años de experiencia
+            +10 años de experiencia
           </p>
-          <p className="mx-auto mt-4 max-w-3xl text-sm font-medium text-brand-dark">
-            {POSITIONING_LINE}
-          </p>
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-stone-600">
-            Trabajo en Recursos Humanos hace años viendo el mismo problema: empresas que no encuentran
-            buenos perfiles y personas que no consiguen entrevistas.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-stone-600">
+            Hace más de 10 años trabajo en Recursos Humanos viendo la misma situación: personas
+            valiosas que no saben cómo mostrarse y empresas perdiendo tiempo en búsquedas mal
+            enfocadas.
           </p>
           <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-stone-600">
-            Mi enfoque es simple: entender bien la necesidad y resolverla sin vueltas. Combino la
-            práctica de selección con mirada de coaching ontológico cuando suma al proceso.
+            Por eso decidí crear un espacio donde el acompañamiento sea humano, claro y estratégico.
+          </p>
+          <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-stone-600">
+            Combino experiencia real en selección con herramientas de coaching laboral y coaching
+            ontológico para ayudarte a avanzar con más claridad y confianza.
           </p>
         </div>
       </RevealOnScroll>
@@ -419,27 +434,28 @@ function ServicesSection() {
 
 function DifferentialSection() {
   const items = [
-    "No pierdo tiempo con perfiles que no sirven",
-    "Te digo lo que nadie te dice (aunque no guste)",
-    "Respuesta rapida (porque el tiempo importa)",
-    "Experiencia real, no teoria",
+    { title: "Experiencia real en RRHH", detail: "Más de una década evaluando talento y procesos." },
+    { title: "Enfoque humano y personalizado", detail: "Cada caso se trabaja con criterio, escucha y contexto." },
+    { title: "Respuesta rápida", detail: "Comunicación clara para que no pierdas tiempo." },
+    { title: "Acompañamiento estratégico", detail: "No es solo RRHH: integro mentoría, coaching y acción concreta." },
   ];
 
   return (
-    <section id="diferencial" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-14">
+    <section id="diferencial" className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 lg:px-14">
       <RevealOnScroll>
-        <div className="rounded-3xl bg-white p-8 ring-1 ring-stone-200 sm:p-10">
-          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Mi diferencial</h2>
-          <ul className="mt-6 space-y-4">
+        <div className="rounded-3xl bg-white p-8 ring-1 ring-stone-200 shadow-[0_12px_30px_-24px_rgba(51,51,51,0.35)] sm:p-10">
+          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">¿Por qué trabajar conmigo?</h2>
+          <ul className="mt-8 grid gap-4 md:grid-cols-2">
             {items.map((item) => (
-              <li key={item} className="flex items-center gap-3 text-stone-700">
-                <span
-                  aria-hidden
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-soft text-brand-dark"
-                >
+              <li
+                key={item.title}
+                className="rounded-2xl border border-stone-200 bg-white p-6 text-left shadow-[0_12px_24px_-20px_rgba(51,51,51,0.32)] transition duration-300 hover:-translate-y-0.5"
+              >
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-soft text-brand-dark">
                   ✓
                 </span>
-                {item}
+                <p className="mt-4 text-lg font-semibold text-ink">{item.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-stone-600">{item.detail}</p>
               </li>
             ))}
           </ul>
@@ -481,19 +497,39 @@ function HowItWorksSection() {
 
 function SocialProofSection() {
   const items = [
-    "En menos de una semana empece a recibir respuestas",
-    "Me llegaron candidatos que realmente encajaban",
-    "Proceso claro y sin perder tiempo",
+    {
+      quote:
+        "Telma me ayudó a reorganizar completamente mi CV y empecé a recibir entrevistas en una semana.",
+      name: "Valeria",
+      role: "Administración",
+    },
+    {
+      quote:
+        "Necesitábamos cubrir un puesto clave y el proceso fue claro, rápido y con candidatos muy alineados.",
+      name: "Mariano",
+      role: "Dueño de pyme",
+    },
+    {
+      quote:
+        "Sentí acompañamiento real durante todo el proceso. Gané claridad, confianza y foco para postularme mejor.",
+      name: "Camila",
+      role: "Profesional en transición laboral",
+    },
   ];
 
   return (
-    <section id="resultados" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-14">
+    <section id="resultados" className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 lg:px-14">
       <RevealOnScroll>
         <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Resultados reales</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {items.map((item) => (
-            <article key={item} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
-              <p className="text-stone-700">&ldquo;{item}&rdquo;</p>
+            <article
+              key={item.name}
+              className="rounded-2xl bg-white p-6 shadow-[0_12px_24px_-20px_rgba(51,51,51,0.32)] ring-1 ring-stone-200"
+            >
+              <p className="text-stone-700">&ldquo;{item.quote}&rdquo;</p>
+              <p className="mt-4 text-sm font-semibold text-brand-dark">— {item.name}</p>
+              <p className="text-xs text-stone-500">{item.role}</p>
             </article>
           ))}
         </div>
@@ -510,7 +546,7 @@ function IdentificationCloserSection() {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-14">
+    <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 lg:px-14">
       <RevealOnScroll>
         <div className="rounded-3xl bg-white p-8 ring-1 ring-stone-200 sm:p-10">
           <h2 className="text-xl font-semibold text-ink sm:text-2xl">
@@ -537,7 +573,7 @@ function IdentificationCloserSection() {
 
 function IndecisosSection() {
   return (
-    <section id="consulta-sin-compromiso" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-14">
+    <section id="consulta-sin-compromiso" className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 lg:px-14">
       <RevealOnScroll>
         <div className="rounded-3xl bg-white p-8 text-center ring-1 ring-stone-200 sm:p-10">
           <h2 className="text-2xl font-semibold text-ink sm:text-3xl">
@@ -547,7 +583,7 @@ function IndecisosSection() {
             Escribime igual y vemos tu caso sin compromiso.
           </p>
           <TrackedWhatsAppButton
-            href={buildWhatsappLink("Hola, quiero hacer una consulta")}
+            href={buildWhatsappLink(WA_MSG_GLOBAL)}
             label="Consultar por WhatsApp"
             className="mt-8"
           />
@@ -571,7 +607,7 @@ function FinalCtaSection() {
           </p>
           <div className="mt-8">
             <TrackedWhatsAppButton
-              href={buildWhatsappLink("Hola, quiero hacer una consulta")}
+              href={buildWhatsappLink(WA_MSG_GLOBAL)}
               label="Hacer consulta por WhatsApp"
               className="w-full sm:w-auto"
             />
@@ -587,7 +623,7 @@ function FooterSection() {
     <footer className="border-t border-stone-200 bg-white">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-stone-600 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
         <a
-          href={buildWhatsappLink("Hola, quiero hacer una consulta")}
+          href={buildWhatsappLink(WA_MSG_GLOBAL)}
           target="_blank"
           rel="noopener noreferrer"
           className="transition hover:text-brand-dark"
@@ -619,7 +655,7 @@ export default function Home() {
               Contacto
             </a>
             <TrackedWhatsAppButton
-              href={buildWhatsappLink("Hola, quiero hacer una consulta")}
+              href={buildWhatsappLink(WA_MSG_GLOBAL)}
               label="WhatsApp"
               className="px-4 py-2 text-sm"
             />
@@ -643,7 +679,7 @@ export default function Home() {
 
       <FooterSection />
       <DelayedFloatingWhatsApp
-        href={buildWhatsappLink("Hola, quiero hacer una consulta")}
+        href={buildWhatsappLink(WA_MSG_GLOBAL)}
       />
     </div>
   );
