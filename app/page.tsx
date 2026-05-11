@@ -34,17 +34,21 @@ function WhatsAppCtaVisual({
 }
 
 const POSITIONING_LINE =
-  "Trabajo desde la mirada de quien selecciona, pero también desde la comprensión de la persona que está del otro lado.";
+  "Trabajo desde mi experiencia real en selección, y también desde la comprensión de quien está del otro lado.";
 
 function ServiceAccordion({
   title,
   children,
+  className = "",
 }: {
   title: string;
   children: ReactNode;
+  className?: string;
 }) {
   return (
-    <details className="group mt-6 rounded-xl border border-stone-200 bg-stone-50/70 open:bg-white">
+    <details
+      className={`group mt-6 rounded-xl border border-stone-200 bg-stone-50/70 open:bg-white ${className}`}
+    >
       <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-ink marker:hidden [&::-webkit-details-marker]:hidden">
         <span className="flex items-center justify-between gap-2">
           {title}
@@ -124,9 +128,7 @@ function HeroSection() {
                 laborales reales y humanos. Cuento con más de 10 años de
                 experiencia en búsqueda y selección de personal, combinando
                 herramientas de Recursos Humanos y coaching aplicado al ámbito
-                laboral. Trabajo desde la mirada de quien selecciona, pero
-                también desde la comprensión de la persona que está del otro
-                lado. Puedo ayudarte a encontrar el talento adecuado para tu
+                laboral. Puedo ayudarte a encontrar el talento adecuado para tu
                 empresa o acompañarte en la búsqueda de tu próxima oportunidad
                 laboral.
               </p>
@@ -227,69 +229,78 @@ function ServicesSection() {
   return (
     <section
       id="servicios"
-      className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-14"
+      className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 lg:px-14"
     >
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-ink sm:text-3xl">
-          Servicios
-        </h2>
-        <p className="mt-2 text-sm text-stone-600">Cómo trabaja {BRAND_NAME}</p>
-        <p className="mt-3 max-w-2xl text-base font-medium text-brand-dark">
+      <div className="mb-10 max-w-3xl sm:mb-12">
+        <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Servicios</h2>
+        <p className="mt-4 text-sm leading-relaxed text-stone-600">
+          Te cuento cómo te acompaño.
+        </p>
+        <p className="mt-6 text-base font-medium leading-relaxed text-brand-dark sm:text-lg">
           {POSITIONING_LINE}
         </p>
       </div>
       <RevealOnScroll>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           <ServiceWhatsappCard
             id="empresas"
             href={buildWhatsappLink(WA_MSG_RECLUTAMIENTO)}
             ariaLabel="Abrir WhatsApp para consultar por reclutamiento"
             trackEventName="empresas_click"
-            className="scroll-mt-28 w-full rounded-3xl bg-white p-8 shadow-sm ring-1 ring-stone-200 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-brand-border/80"
+            className="scroll-mt-28 w-full rounded-3xl bg-white p-8 shadow-sm ring-1 ring-stone-200 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-brand-border/80 sm:p-10"
           >
-            <h3 className="text-2xl font-bold tracking-tight text-ink">
-              Reclutamiento y Selección de Personal Encontrá personas que
-              realmente encajen con tu equipo
-            </h3>
-            <p className="mt-4 text-stone-600">
-              Te acompaño en todo el proceso de búsqueda y selección para que
-              puedas enfocarte en tu negocio, sin perder tiempo entrevistando
-              perfiles que no se ajustan a lo que necesitás.
-            </p>
-            <p className="mt-4 text-stone-600">
-              Con más de 10 años de experiencia en selección de personal,
-              trabajo de forma cercana, práctica y estratégica para ayudarte a
-              encontrar candidatos alineados tanto al puesto como a la cultura
-              de tu empresa.
-            </p>
-            <ul className="mt-5 space-y-2 text-sm text-stone-700">
-              <li className="flex gap-2">
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+                Reclutamiento y selección de personal
+              </h3>
+              <p className="text-lg font-semibold leading-snug text-stone-800 sm:text-xl">
+                Encontrá personas que realmente encajen con tu equipo
+              </p>
+            </div>
+            <div className="mt-8 space-y-5 text-stone-600">
+              <p className="leading-relaxed">
+                Te acompaño en todo el proceso de búsqueda y selección para que
+                puedas enfocarte en tu negocio, sin perder tiempo entrevistando
+                perfiles que no se ajustan a lo que necesitás.
+              </p>
+              <p className="leading-relaxed">
+                Hace más de 10 años que trabajo en selección de personal: lo hago
+                de forma cercana, práctica y estratégica, para ayudarte a
+                encontrar candidatos alineados tanto al puesto como a la cultura
+                de tu empresa.
+              </p>
+            </div>
+            <ul className="mt-8 space-y-3 text-sm leading-relaxed text-stone-700">
+              <li className="flex gap-3">
                 <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-soft text-xs text-brand-dark">
                   ✓
                 </span>
                 Perfiles previamente evaluados
               </li>
-              <li className="flex gap-2">
+              <li className="flex gap-3">
                 <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-soft text-xs text-brand-dark">
                   ✓
                 </span>
                 Ahorro de tiempo en el proceso de selección
               </li>
-              <li className="flex gap-2">
+              <li className="flex gap-3">
                 <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-soft text-xs text-brand-dark">
                   ✓
                 </span>
                 Entrevistas y análisis profesional de candidatos
               </li>
-              <li className="flex gap-2">
+              <li className="flex gap-3">
                 <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-soft text-xs text-brand-dark">
                   ✓
                 </span>
                 Presentación de perfiles recomendados con informe individual
               </li>
             </ul>
-            <ServiceAccordion title="¿Qué incluye el servicio?">
-              <ul className="space-y-2 text-sm text-stone-700">
+            <ServiceAccordion
+              title="¿Qué incluye el servicio?"
+              className="mt-10 sm:mt-12"
+            >
+              <ul className="space-y-2.5 text-sm leading-relaxed text-stone-700">
                 {[
                   "Relevamiento del perfil y necesidad del puesto",
                   "Publicación y difusión de la búsqueda",
@@ -306,22 +317,22 @@ function ServicesSection() {
                 ))}
               </ul>
             </ServiceAccordion>
-            <div className="mt-4 border-l-4 border-brand bg-brand-soft/95 py-4 pl-4 pr-3">
+            <div className="mt-10 rounded-2xl border-l-4 border-brand bg-brand-soft/95 py-5 pl-5 pr-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-brand-dark">
                 Diferencial
               </p>
-              <p className="mt-2 text-sm font-semibold text-ink">
-                No solo presento candidatos.
+              <p className="mt-3 text-sm font-semibold leading-relaxed text-ink">
+                No solo te presento candidatos.
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-stone-700">
-                Analizo cada perfil desde la experiencia real en selección y te
-                entrego información clara para facilitar una decisión más segura
-                y eficiente.
+              <p className="mt-3 text-sm leading-relaxed text-stone-700">
+                Analizo cada perfil desde mi experiencia real en selección y te
+                entrego información clara para que puedas decidir con más
+                seguridad y sin perder tiempo.
               </p>
             </div>
             <WhatsAppCtaVisual
               label="Quiero contratar mejor"
-              className="mt-8 w-full"
+              className="mt-10 w-full"
             />
           </ServiceWhatsappCard>
 
@@ -348,9 +359,9 @@ function ServicesSection() {
                 profesional y enfocada en el tipo de trabajo que estás buscando.
               </p>
               <p className="mt-4 text-stone-600">
-                Trabajo cada perfil desde la mirada de quien selecciona, para
-                que tu CV destaque, pase filtros ATS y genere más oportunidades
-                reales de entrevista.
+                Trabajo cada CV desde mi experiencia en selección, para que
+                destaque, pase filtros ATS y genere más oportunidades reales de
+                entrevista.
               </p>
               <ul className="mt-5 space-y-2 text-sm text-stone-700">
                 <li className="flex gap-2">
@@ -445,8 +456,7 @@ function ServicesSection() {
                 afrontar entrevistas con más claridad y confianza.
               </p>
               <p className="mt-4 text-sm font-medium italic leading-relaxed text-brand-dark">
-                Trabajo desde la mirada de quien selecciona, pero también desde
-                la comprensión de la persona que está del otro lado.
+                {POSITIONING_LINE}
               </p>
 
               <div className="mt-6 rounded-xl border border-brand-border/55 bg-brand-soft/75 p-5">
