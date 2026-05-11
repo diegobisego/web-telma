@@ -130,7 +130,7 @@ function HeroSection() {
             <figure className="mx-auto w-full max-w-md lg:max-w-none">
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl bg-brand-soft/70 ring-1 ring-brand-border/65">
                 <Image
-                  src="/final_telma.png"
+                  src="/final_blanco.png"
                   alt={`Retrato profesional de ${BRAND_NAME}, consultora RRHH.`}
                   fill
                   priority
