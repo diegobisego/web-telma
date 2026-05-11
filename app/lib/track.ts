@@ -30,8 +30,6 @@ export function trackEvent(
           keepalive: true,
         }).catch(() => {});
       }
-    } catch {
-      /* noop */
-    }
+    } catch {}
   }
 }
