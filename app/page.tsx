@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { buildWhatsappLink } from "@/app/lib/whatsapp";
 import { RevealOnScroll } from "./ui/reveal-on-scroll";
 import { DelayedFloatingWhatsApp } from "./ui/delayed-floating-whatsapp";
@@ -127,12 +128,14 @@ function HeroSection() {
               />
             </div>
             <figure className="mx-auto w-full max-w-md lg:max-w-none">
-              <div className="overflow-hidden rounded-3xl bg-brand-soft/70 ring-1 ring-brand-border/65">
-                <img
-                  src="/telma-hero-placeholder.svg"
-                  alt={`Retrato profesional de ${BRAND_NAME} en un entorno de trabajo cálido y moderno.`}
-                  className="h-full w-full object-cover"
-                  loading="eager"
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl bg-brand-soft/70 ring-1 ring-brand-border/65">
+                <Image
+                  src="/final_telma.png"
+                  alt={`Retrato profesional de ${BRAND_NAME}, consultora RRHH.`}
+                  fill
+                  priority
+                  sizes="(max-width: 1023px) 100vw, 42vw"
+                  className="object-cover object-[center_18%]"
                 />
               </div>
             </figure>
