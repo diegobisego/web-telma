@@ -36,6 +36,40 @@ function WhatsAppCtaVisual({
 const POSITIONING_LINE =
   "Trabajo desde mi experiencia real en selección, y también desde la comprensión de quien está del otro lado.";
 
+function PositioningQuote({
+  className = "",
+  variant = "section",
+}: {
+  className?: string;
+  variant?: "hero" | "section" | "compact";
+}) {
+  const sizeClass =
+    variant === "hero"
+      ? "text-lg leading-relaxed sm:text-xl"
+      : variant === "compact"
+        ? "text-sm leading-relaxed"
+        : "text-base leading-relaxed sm:text-lg";
+
+  return (
+    <blockquote
+      className={`relative max-w-2xl overflow-hidden rounded-r-2xl border-l-4 border-brand bg-linear-to-r from-brand-soft/95 to-brand-soft/40 py-5 pl-7 pr-5 shadow-[inset_0_0_0_1px_rgba(196,209,198,0.45)] sm:pl-8 sm:pr-6 ${className}`}
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-1 top-1 select-none font-display text-5xl leading-none text-brand/20 sm:left-2 sm:top-2 sm:text-6xl"
+      >
+        &ldquo;
+      </span>
+      <p
+        className={`relative z-10 pl-5 font-display font-medium italic text-brand-dark ${sizeClass}`}
+      >
+        {POSITIONING_LINE}
+        <span className="whitespace-nowrap text-brand/35">&rdquo;</span>
+      </p>
+    </blockquote>
+  );
+}
+
 function ServiceAccordion({
   title,
   children,
@@ -132,9 +166,7 @@ function HeroSection() {
                 empresa o acompañarte en la búsqueda de tu próxima oportunidad
                 laboral.
               </p>
-              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-brand-dark italic sm:text-xl">
-                {POSITIONING_LINE}
-              </p>
+              <PositioningQuote variant="hero" className="mt-7" />
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <a
                   href="#personas"
@@ -225,6 +257,48 @@ function DecisionQuickSection() {
   );
 }
 
+function AboutSection() {
+  return (
+    <section
+      id="sobre-mi"
+      className="mx-auto w-full max-w-4xl px-6 py-20 sm:px-10 lg:px-14"
+    >
+      <RevealOnScroll>
+        <div className="rounded-3xl bg-white p-8 ring-1 ring-stone-200 shadow-[0_12px_30px_-24px_rgba(51,51,51,0.35)] sm:p-10">
+          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Sobre mí</h2>
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-stone-600 sm:text-lg">
+            <p>
+              Soy profesional en Gestión de Recursos Humanos y cuento con más de
+              10 años de experiencia en el área, acompañando procesos de
+              selección, desarrollo y gestión de talento.
+            </p>
+            <p>
+              Mi recorrido profesional me permitió comprender tanto las
+              necesidades de las empresas como los desafíos que enfrentan las
+              personas que buscan una oportunidad laboral o desean crecer
+              profesionalmente.
+            </p>
+            <p>
+              Luego de muchos años trabajando en empresas, decidí comenzar este
+              proyecto de manera independiente al identificar la brecha que muchas
+              veces existe entre lo que las organizaciones necesitan y lo que las
+              personas buscan en su desarrollo laboral. También pude observar los
+              sesgos y dificultades que suelen presentarse en los procesos de
+              búsqueda y selección.
+            </p>
+            <p>
+              Hoy, mi objetivo es impulsar la empleabilidad y generar conexiones
+              laborales más humanas y efectivas, brindando herramientas y
+              acompañamiento tanto a personas como a empresas para ayudarlas a
+              alcanzar sus objetivos.
+            </p>
+          </div>
+        </div>
+      </RevealOnScroll>
+    </section>
+  );
+}
+
 function ServicesSection() {
   return (
     <section
@@ -236,9 +310,7 @@ function ServicesSection() {
         <p className="mt-4 text-sm leading-relaxed text-stone-600">
           Te cuento cómo te acompaño.
         </p>
-        <p className="mt-6 text-base font-medium leading-relaxed text-brand-dark sm:text-lg">
-          {POSITIONING_LINE}
-        </p>
+        <PositioningQuote variant="section" className="mt-6" />
       </div>
       <RevealOnScroll>
         <div className="flex flex-col gap-8">
@@ -455,9 +527,7 @@ function ServicesSection() {
                 laboral, mejorar tu presentación profesional y prepararte para
                 afrontar entrevistas con más claridad y confianza.
               </p>
-              <p className="mt-4 text-sm font-medium italic leading-relaxed text-brand-dark">
-                {POSITIONING_LINE}
-              </p>
+              <PositioningQuote variant="compact" className="mt-4 max-w-none" />
 
               <div className="mt-6 rounded-xl border border-brand-border/55 bg-brand-soft/75 p-5">
                 <p className="text-base font-semibold text-ink">
@@ -806,7 +876,7 @@ function FooterSection() {
             WhatsApp
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/telma-cordoba-9701a676"
             target="_blank"
             rel="noopener noreferrer"
             className="transition hover:text-ink"
@@ -836,6 +906,12 @@ export default function Home() {
           </a>
           <div className="flex items-center gap-3 text-sm text-stone-600 sm:gap-4">
             <a
+              href="#sobre-mi"
+              className="hidden transition hover:text-brand-dark sm:inline-flex"
+            >
+              Sobre mí
+            </a>
+            <a
               href="#servicios"
               className="hidden transition hover:text-brand-dark sm:inline-flex"
             >
@@ -860,6 +936,7 @@ export default function Home() {
         <AudienceSegmentSection />
         <HeroSection />
         <DecisionQuickSection />
+        <AboutSection />
         <ServicesSection />
         <DifferentialSection />
         <HowItWorksSection />

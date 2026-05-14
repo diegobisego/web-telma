@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const TARGET_IDS: readonly string[] = ["mentoria", "cv", "empresas"];
+const TARGET_IDS: readonly string[] = ["mentoria", "cv", "empresas", "sobre-mi"];
 
 export function ScrollHashHighlight() {
   useEffect(() => {
